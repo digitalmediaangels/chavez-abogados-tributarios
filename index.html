@@ -410,7 +410,7 @@ input{font:inherit;padding:11px 12px;border:1px solid #b7b1a3;border-radius:2px;
   <div class="ancho">
     <a href="#inicio" aria-label="Chávez Abogados Tributarios, inicio"><img class="logo" src="logo-h.webp" alt="Chávez Abogados Tributarios" width="594" height="150"></a>
     <nav class="menu" aria-label="Secciones">
-      <a href="#que-le-llego">¿Le llegó la autoridad?</a><a href="#areas">Áreas</a><a href="#firma">La firma</a><a href="#equipo">Equipo</a><a href="#contacto">Contacto</a>
+      <a href="#areas">Áreas</a><a href="#firma">La firma</a><a href="#equipo">Equipo</a><a href="#contacto">Contacto</a>
     </nav>
     <a class="boton-tel" href="tel:+524499961173" aria-label="Llamar al 449 996 1173"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg><span>449 996 1173</span></a>
   </div>
@@ -428,7 +428,7 @@ input{font:inherit;padding:11px 12px;border:1px solid #b7b1a3;border-radius:2px;
       <a class="boton boton-1" data-wa="Buen día, Chávez Abogados. Quiero que revisen mi caso fiscal." href="https://wa.me/524496883815">Revisar mi caso por WhatsApp</a>
       <a class="boton boton-2" href="tel:+524499961173">Llamar al 449 996 1173</a>
     </div>
-    <a class="bajar" href="#que-le-llego" aria-label="Ver más"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9l7 7 7-7"/></svg></a>
+    <a class="bajar" href="#areas" aria-label="Ver más"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9l7 7 7-7"/></svg></a>
   </div>
   <div class="ancho cifras-cont">
     <ul class="cifras">
@@ -437,25 +437,6 @@ input{font:inherit;padding:11px 12px;border:1px solid #b7b1a3;border-radius:2px;
       <li><b>3 estados</b><span>Aguascalientes, Zacatecas y Guanajuato</span></li>
       <li><b>11 años</b><span>De experiencia dentro del SAT en nuestro equipo</span></li>
     </ul>
-  </div>
-</section>
-
-<section class="bloque llego" id="que-le-llego">
-  <div class="ancho">
-    <div class="entrada aparece">
-      <h2>¿Le llegó la autoridad?</h2>
-      <p>Elija lo que tiene en la mano y vea qué conviene hacer primero.</p>
-    </div>
-    <p class="pista"><span class="pista-flecha" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M6 14l6 6 6-6"/></svg></span>Toque la opción que se parece a su caso</p>
-    <div class="temas" role="tablist" aria-label="Situaciones" id="temas">
-      <button class="tema" role="tab" aria-selected="true" data-t="carta">Carta invitación del SAT</button>
-      <button class="tema" role="tab" aria-selected="false" data-t="revision">Auditoría o revisión</button>
-      <button class="tema" role="tab" aria-selected="false" data-t="credito">Crédito fiscal</button>
-      <button class="tema" role="tab" aria-selected="false" data-t="cuentas">Cuentas congeladas</button>
-      <button class="tema" role="tab" aria-selected="false" data-t="imss">IMSS o INFONAVIT</button>
-      <button class="tema" role="tab" aria-selected="false" data-t="sellos">Sellos digitales cancelados</button>
-    </div>
-    <div class="respuesta" id="respuesta" role="tabpanel" aria-live="polite"></div>
   </div>
 </section>
 
@@ -702,26 +683,6 @@ input{font:inherit;padding:11px 12px;border:1px solid #b7b1a3;border-radius:2px;
   var cabeza=document.getElementById('cabeza');
   window.addEventListener('scroll',function(){cabeza.classList.toggle('pegada',window.scrollY>40)},{passive:true});
 
-  /* ¿Qué le llegó? */
-  var R={
-    carta:{c:'“Me llegó una carta invitación del SAT”',f:'No es una multa, pero no la ignore. Revisamos qué detectó la autoridad y preparamos la respuesta.',h:'Carta invitación',p:['Revise la fecha en que la recibió y qué periodo menciona.','Reúna sus declaraciones y CFDI de ese periodo.','Antes de corregir o pagar, valide si la diferencia es real.'],n:'Una carta invitación bien respondida evita que se convierta en una auditoría formal.'},
-    revision:{c:'“Nos notificaron una orden de auditoría”',f:'Lo acompañamos desde la primera visita. Lo que se entrega y se firma al inicio define el resto del proceso.',h:'Auditoría o revisión',p:['No firme actas sin leerlas con su abogado.','Entregue solo lo que la orden pide y en el plazo que marca.','Evalúe desde el inicio si conviene un acuerdo conclusivo.'],n:'Los plazos para entregar información en una revisión suelen ser de días, no de semanas.'},
-    credito:{c:'“Nos determinaron un crédito fiscal”',f:'Revisamos si el crédito se puede impugnar y por qué vía: recurso de revocación, juicio de nulidad o amparo.',h:'Crédito fiscal',p:['Ubique la fecha de notificación: desde ahí corre el plazo.','No pague ni firme un convenio sin revisar opciones.','Si hay riesgo de embargo, se puede garantizar el interés fiscal.'],n:'Por regla general hay 30 días hábiles para impugnar. Mientras antes lo revise, más opciones tiene.'},
-    cuentas:{c:'“El banco nos dice que las cuentas están congeladas”',f:'Identificamos qué autoridad ordenó la inmovilización y pedimos su liberación por la vía más rápida.',h:'Cuentas inmovilizadas',p:['Pida al banco el número de oficio y la autoridad que lo ordenó.','Separe las cuentas de nómina, que tienen protección especial.','Actúe el mismo día: cada día afecta su operación.'],n:'Hay supuestos en los que la inmovilización procede y otros en los que no. Hay que revisarlo con el oficio.'},
-    imss:{c:'“El IMSS nos mandó un capital constitutivo”',f:'Defendemos a la empresa ante el IMSS y el INFONAVIT por cuotas, capitales constitutivos, aportaciones y multas.',h:'IMSS o INFONAVIT',p:['Revise a qué trabajador y a qué periodo se refiere.','Compare contra sus pagos y movimientos afiliatorios.','Impugne en plazo si la determinación no corresponde.'],n:'Estos actos también tienen plazos cortos para impugnarse.'},
-    sellos:{c:'“Nos restringieron los sellos digitales y no podemos facturar”',f:'Presentamos la aclaración para recuperar la facturación y atendemos la causa de fondo.',h:'Sellos digitales',p:['Descargue el aviso en el buzón tributario.','Identifique la causal que señala el SAT.','Presente la aclaración con las pruebas correctas.'],n:'Sin sellos su empresa no puede facturar. Es de los asuntos más urgentes que atendemos.'}
-  };
-  var caja=document.getElementById('respuesta'),temas=document.getElementById('temas');
-  function pintar(k){var d=R[k];
-    caja.style.animation='none';caja.offsetHeight;caja.style.animation='';
-    caja.innerHTML='<div class="chat"><p class="cita">'+d.c+'</p><p class="respuesta-firma">'+d.f+'</p></div>'+
-      '<div class="respuesta-texto"><h3>'+d.h+': qué hacer primero</h3><ol class="pasos-lista">'+d.p.map(function(x){return '<li><span>'+x+'</span></li>'}).join('')+'</ol>'+
-      '<p class="plazo-nota">'+d.n+' <span class="falta">Texto por validar con la firma.</span></p>'+
-      '<div class="acciones"><a class="boton boton-1 boton-3d" href="'+wa('Buen día, Chávez Abogados. '+d.c.replace(/[“”]/g,'')+'. ¿Pueden revisar mi caso?')+'">Revisar mi caso por WhatsApp</a></div></div>';
-  }
-  temas.addEventListener('click',function(e){var b=e.target.closest('.tema');if(!b)return;
-    [].forEach.call(temas.children,function(x){x.setAttribute('aria-selected',x===b)});pintar(b.dataset.t)});
-  pintar('carta');
 
   /* Intro: el logo aparece y se coloca en la portada */
   (function(){var d=document.documentElement;if(!d.classList.contains('js-intro'))return;
