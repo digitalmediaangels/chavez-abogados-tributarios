@@ -450,6 +450,14 @@ input{font:inherit;padding:11px 12px;border:1px solid #b7b1a3;border-radius:2px;
 .persona{grid-template-columns:72px 1fr;gap:16px}
 .persona .inicial{width:72px;height:72px;font-size:1.25rem}
 .foto-persona{object-fit:cover;padding:0;box-shadow:0 0 0 2px #fff,0 0 0 3px #d9d3c4}
+.portadas{display:grid;gap:12px;margin-top:6px}
+.portadas-fila{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.portada-rev{margin:0;background:#fff;border:1px solid var(--linea);padding:10px;box-shadow:0 3px 0 #e2dccd,0 14px 26px -14px rgba(0,0,0,.3);transition:transform .25s ease,box-shadow .25s ease}
+.portada-rev:hover{transform:translateY(-4px) rotate(-.6deg);box-shadow:0 6px 0 #e2dccd,0 22px 32px -16px rgba(0,0,0,.35)}
+.portada-rev img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top}
+.portada-rev figcaption{display:grid;gap:2px;padding:10px 2px 2px}
+.portada-rev b{font:600 .74rem var(--texto);letter-spacing:.14em;text-transform:uppercase;color:var(--naranja)}
+.portada-rev span{font:400 1.05rem/1.3 var(--titulo);color:var(--tinta)}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -596,7 +604,13 @@ input{font:inherit;padding:11px 12px;border:1px solid #b7b1a3;border-radius:2px;
         <div class="dato"><b>80%</b><span>de los asuntos concluye con sentencia favorable <span class="falta">dato de 2020, por actualizar</span></span></div>
         <div class="dato"><b>2018</b><span>Premio Construye por el diseño de nuestra sede. <a href="#sede" style="color:inherit">Conózcala</a></span></div>
       </div>
-      <p class="prensa"><img loading="lazy" src="lider.webp" alt="" width="662" height="830"><span>Perfil en <b>Líder Empresarial</b>: “Chávez Abogados Tributarios, fiscalistas por excelencia”.</span></p>
+      <div class="portadas">
+        <p class="miembro-titulo">Portadas en Líder Empresarial</p>
+        <div class="portadas-fila">
+          <figure class="portada-rev"><img loading="lazy" src="lider-2020.webp" alt="Portada de Líder Empresarial de noviembre de 2020 con el equipo de Chávez Abogados Tributarios: Fiscalistas por excelencia" width="1124" height="1124"><figcaption><b>Noviembre 2020</b><span>“Fiscalistas por excelencia”</span></figcaption></figure>
+          <figure class="portada-rev"><img loading="lazy" src="lider.webp" alt="Portada de Líder Empresarial de junio de 2021: Asociados del éxito" width="662" height="830"><figcaption><b>Junio 2021</b><span>“Asociados del éxito”</span></figcaption></figure>
+        </div>
+      </div>
     </div>
   </div>
 </section>
