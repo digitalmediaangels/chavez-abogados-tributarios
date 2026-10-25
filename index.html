@@ -386,6 +386,44 @@ input{font:inherit;padding:11px 12px;border:1px solid #b7b1a3;border-radius:2px;
 .boton-osc.boton-1{border-bottom:2px solid var(--naranja)}
 .boton-osc:hover{background:linear-gradient(#2b2b2b,#1a1a1a);transform:translateY(3px);box-shadow:0 1px 0 #050505,0 4px 8px -4px rgba(0,0,0,.6)}
 .boton-osc:active{transform:translateY(4px);box-shadow:0 0 0 #050505,inset 0 2px 5px rgba(0,0,0,.6)}
+/* Sede */
+.sede{background:var(--carbon) var(--triangulos);color:var(--crema);overflow-x:clip}
+.sede .etiqueta{color:#a9a392}
+.sede-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,72px);align-items:center}
+.sede-texto{display:grid;gap:16px}
+.sede-texto>p:not(.etiqueta){color:#cfc9b8;max-width:58ch}
+.ficha-sede{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:8px 0 0;border-top:1px solid #343434}
+.ficha-sede div{padding:14px 16px 14px 0;border-bottom:1px solid #343434}
+.ficha-sede div:nth-child(odd){border-right:1px solid #343434}
+.ficha-sede div:nth-child(even){padding-left:16px}
+.ficha-sede dt{font:600 .74rem var(--texto);letter-spacing:.16em;text-transform:uppercase;color:var(--naranja)}
+.ficha-sede dd{margin:4px 0 0;color:var(--crema);line-height:1.4}
+.sede-video{position:relative;margin:0;justify-self:center;width:min(100%,340px)}
+.sede-video video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:4px;background:#000;box-shadow:0 0 0 1px #333,0 24px 50px -20px rgba(0,0,0,.8)}
+.sede-video::before{content:"";position:absolute;inset:16px -16px calc(2em - 16px) 16px;border:1px solid var(--naranja);border-radius:4px;z-index:-1}
+.sede-video{isolation:isolate}
+.sede-video figcaption{margin-top:12px;font-size:.88rem;color:#a9a392}
+.video-boton{position:absolute;right:12px;bottom:calc(2em + 24px);width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(14,14,14,.6);color:#fff;display:grid;place-items:center}
+.galeria{margin-top:clamp(40px,6vw,72px)}
+.galeria-pista{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
+.galeria-pista::-webkit-scrollbar{display:none}
+.galeria-pista figure{flex:0 0 min(78%,760px);margin:0;scroll-snap-align:center}
+.galeria-pista img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:3px}
+.galeria-control{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:18px}
+.galeria-flecha{width:44px;height:44px;border-radius:50%;border:1px solid rgba(242,236,217,.4);background:transparent;color:var(--crema);display:grid;place-items:center;transition:border-color .2s}
+.galeria-flecha:hover{border-color:var(--naranja)}
+.galeria-puntos{display:flex;gap:8px}
+.galeria-puntos button{width:8px;height:8px;padding:0;border-radius:50%;border:0;background:#555;transition:background .2s,width .2s}
+.galeria-puntos button[aria-current="true"]{background:var(--naranja);width:22px;border-radius:99px}
+.galeria-ayuda{text-align:center;font-size:.85rem;color:#8a857a;margin-top:8px;display:none}
+@media (max-width:860px){
+  .sede-grid{grid-template-columns:minmax(0,1fr)}
+  .sede-video{width:min(78%,320px)}
+  .galeria-pista figure{flex-basis:88%}
+  .galeria-ayuda{display:block}
+  .galeria{margin-inline:-20px}.galeria-pista{padding-inline:20px;scroll-padding-inline:20px}
+}
+@media (max-width:520px){.ficha-sede{grid-template-columns:minmax(0,1fr)}.ficha-sede div:nth-child(odd){border-right:0}.ficha-sede div:nth-child(even){padding-left:0}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -417,7 +455,7 @@ input{font:inherit;padding:11px 12px;border:1px solid #b7b1a3;border-radius:2px;
   <div class="ancho">
     <a href="#inicio" aria-label="Chávez Abogados Tributarios, inicio"><img class="logo" src="logo-h.webp" alt="Chávez Abogados Tributarios" width="594" height="150"></a>
     <nav class="menu" aria-label="Secciones">
-      <a href="#areas">Áreas</a><a href="#firma">La firma</a><a href="#equipo">Equipo</a><a href="#clientes">Clientes</a><a href="#contacto">Contacto</a>
+      <a href="#areas">Áreas</a><a href="#firma">La firma</a><a href="#equipo">Equipo</a><a href="#sede">La sede</a><a href="#clientes">Clientes</a><a href="#contacto">Contacto</a>
     </nav>
     <a class="boton-tel" href="tel:+524499961173" aria-label="Llamar al 449 996 1173"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg><span>449 996 1173</span></a>
   </div>
@@ -531,7 +569,7 @@ input{font:inherit;padding:11px 12px;border:1px solid #b7b1a3;border-radius:2px;
       <p>El equipo se capacita de forma constante por las reformas fiscales, con análisis en equipo y capacitadores nacionales e internacionales.</p>
       <div class="datos">
         <div class="dato"><b>80%</b><span>de los asuntos concluye con sentencia favorable <span class="falta">dato de 2020, por actualizar</span></span></div>
-        <div class="dato"><b>2018</b><span>Inauguración de la sede, diseñada por Plastik Arquitectos y publicada en ArchDaily</span></div>
+        <div class="dato"><b>2018</b><span>Premio Construye por el diseño de nuestra sede. <a href="#sede" style="color:inherit">Conózcala</a></span></div>
       </div>
       <p class="prensa"><img loading="lazy" src="lider.webp" alt="" width="662" height="830"><span>Perfil en <b>Líder Empresarial</b>: “Chávez Abogados Tributarios, fiscalistas por excelencia”.</span></p>
     </div>
@@ -581,6 +619,46 @@ input{font:inherit;padding:11px 12px;border:1px solid #b7b1a3;border-radius:2px;
       <div class="persona aparece"><span class="inicial">DP</span><div><b>Daniel Pérez</b><span class="rol">Abogado Junior</span><p>Licenciado en Derecho, UAA.</p></div></div>
     </div>
     <figure class="equipo-foto aparece" style="margin-inline:0;margin-bottom:0"><img loading="lazy" src="sala.webp" alt="Equipo de Chávez Abogados Tributarios en la sala de juntas" width="1000" height="1000"></figure>
+  </div>
+</section>
+
+<section class="bloque sede" id="sede">
+  <div class="ancho">
+    <div class="sede-grid">
+      <div class="sede-texto aparece">
+        <p class="etiqueta">La sede</p>
+        <h2>Un edificio premiado, hecho para atenderlo</h2>
+        <p>Nuestra sede fue diseñada por PLASTIK Arquitectos, de Gerardo Carrera y Eduardo Arellano, en un predio frente a un arroyo arbolado al norte de la ciudad. La fachada de triángulos de acero y vidrio llena de luz natural los cuatro niveles del edificio.</p>
+        <p>Los accesos están separados: los clientes entran por la calle principal y el personal por la calle posterior. Así cada reunión se atiende con privacidad.</p>
+        <dl class="ficha-sede">
+          <div><dt>Premio</dt><dd>Premios Construye 2018, Diseño de Infraestructura Privada</dd></div>
+          <div><dt>Publicación</dt><dd>ArchDaily, “Corporativo Chávez / PLASTIK Arquitectos”</dd></div>
+          <div><dt>Inauguración</dt><dd>31 de mayo de 2018</dd></div>
+          <div><dt>Superficie</dt><dd>600 m² en 4 niveles</dd></div>
+        </dl>
+      </div>
+      <figure class="sede-video aparece">
+        <video src="sede.mp4" poster="sede-poster.webp" muted loop playsinline preload="none" id="video-sede" aria-label="Recorrido en video por la sede de Chávez Abogados Tributarios"></video>
+        <button class="video-boton" type="button" id="video-boton" aria-label="Pausar video"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path class="ico-pausa" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></button>
+        <figcaption>Recorrido por la sede</figcaption>
+      </figure>
+    </div>
+
+    <div class="galeria aparece" aria-roledescription="carrusel" aria-label="Fotos de la sede">
+      <div class="galeria-pista" id="galeria" tabindex="0">
+        <figure><img loading="lazy" src="g-logo.webp" alt="Logotipo de la firma en la fachada de triángulos de vidrio" width="1027" height="681"></figure>
+        <figure><img loading="lazy" src="g-atrio.webp" alt="Equipo en el puente de cristal del atrio de triple altura" width="1023" height="678"></figure>
+        <figure><img loading="lazy" src="g-escalera.webp" alt="Juan Antonio Chávez con el equipo frente al ventanal de triángulos" width="1023" height="681"></figure>
+        <figure><img loading="lazy" src="g-terraza.webp" alt="Equipo en la terraza de la fachada principal" width="1018" height="678"></figure>
+        <figure><img loading="lazy" src="g-sala.webp" alt="Reunión del equipo en la sala de juntas" width="1025" height="676"></figure>
+      </div>
+      <div class="galeria-control">
+        <button type="button" class="galeria-flecha" id="g-ant" aria-label="Foto anterior"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <div class="galeria-puntos" id="g-puntos"></div>
+        <button type="button" class="galeria-flecha" id="g-sig" aria-label="Foto siguiente"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+      <p class="galeria-ayuda">Deslice para ver más fotos</p>
+    </div>
   </div>
 </section>
 
@@ -700,6 +778,30 @@ input{font:inherit;padding:11px 12px;border:1px solid #b7b1a3;border-radius:2px;
       setTimeout(function(){d.classList.add('intro-hecha');dest.style.opacity=1},650);
       setTimeout(function(){d.classList.remove('js-intro');intro.remove()},1100)}
     setTimeout(fin,2300);intro.addEventListener('click',fin);
+  })();
+
+  /* Video de la sede: se reproduce al verse */
+  (function(){var v=document.getElementById('video-sede'),b=document.getElementById('video-boton');if(!v)return;
+    var calma=window.matchMedia('(prefers-reduced-motion: reduce)').matches,manual=false;
+    var P='<path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/>',J='<path d="M8 5l11 7-11 7z"/>';
+    function icono(){b.querySelector('svg').innerHTML=v.paused?J:P;b.setAttribute('aria-label',v.paused?'Reproducir video':'Pausar video')}
+    b.addEventListener('click',function(){manual=true;if(v.paused){v.play()}else{v.pause()}});
+    v.addEventListener('play',icono);v.addEventListener('pause',icono);icono();
+    if('IntersectionObserver' in window&&!calma){new IntersectionObserver(function(e){e.forEach(function(x){if(manual)return;if(x.isIntersecting){v.play().catch(function(){})}else{v.pause()}})},{threshold:.4}).observe(v)}
+  })();
+
+  /* Galería deslizable */
+  (function(){var g=document.getElementById('galeria');if(!g)return;
+    var fotos=[].slice.call(g.children),puntos=document.getElementById('g-puntos'),act=0;
+    fotos.forEach(function(f,i){var d=document.createElement('button');d.type='button';d.setAttribute('aria-label','Foto '+(i+1));d.addEventListener('click',function(){ir(i)});puntos.appendChild(d)});
+    function ir(i){i=(i+fotos.length)%fotos.length;var f=fotos[i];g.scrollTo({left:f.offsetLeft-(g.clientWidth-f.clientWidth)/2,behavior:'smooth'})}
+    function marcar(){var c=g.scrollLeft+g.clientWidth/2,mejor=0,dist=1e9;fotos.forEach(function(f,i){var d=Math.abs(f.offsetLeft+f.clientWidth/2-c);if(d<dist){dist=d;mejor=i}});act=mejor;
+      [].forEach.call(puntos.children,function(p,i){p.setAttribute('aria-current',i===act)})}
+    var t;g.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(marcar,80)},{passive:true});
+    document.getElementById('g-ant').addEventListener('click',function(){ir(act-1)});
+    document.getElementById('g-sig').addEventListener('click',function(){ir(act+1)});
+    g.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();ir(act+1)}if(e.key==='ArrowLeft'){e.preventDefault();ir(act-1)}});
+    marcar();
   })();
 
   /* Áreas */
